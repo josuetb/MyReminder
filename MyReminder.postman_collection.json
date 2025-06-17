@@ -1,0 +1,72 @@
+{
+    "info": {
+        "_postman_id": "12345678-abcd-efgh-ijkl-9876543210ab",
+        "name": "MyReminder",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get All Users",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/users",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "users"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"uid\": \"u123\",\n  \"name\": \"Josue\",\n  \"email\": \"josue@example.com\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/users",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "users"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Reminders",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/reminders",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "reminders"
+                    ]
+                }
+            }
+        }
+    ]
+}
