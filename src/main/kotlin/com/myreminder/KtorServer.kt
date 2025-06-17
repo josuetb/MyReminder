@@ -1,0 +1,1 @@
+// Este archivo ya no se usa. El backend ahora está implementado con Spring Boot. 

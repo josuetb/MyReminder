@@ -49,6 +49,4 @@ El sistema contiene las siguientes tablas:
 3. Ejecuta la aplicación desde tu IDE o usando Gradle
 4. Prueba los endpoints con Postman o cualquier cliente REST
 
----
 
-¡Listo! Si tienes dudas, revisa los comentarios en el código o contacta al autor.

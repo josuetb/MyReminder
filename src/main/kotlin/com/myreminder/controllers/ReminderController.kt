@@ -1,27 +1,28 @@
 package com.myreminder.controllers
 
-import com.myreminder.mappers.ReminderMapper
-import com.myreminder.models.requests.ReminderRequest
-import com.myreminder.models.responses.ReminderResponse
+import com.myreminder.models.entities.Reminder
 import com.myreminder.services.ReminderService
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
 
+@RestController
+@RequestMapping("/reminders")
 class ReminderController(private val service: ReminderService) {
-    fun getAll(): List<ReminderResponse> =
-        service.getAll().map { ReminderMapper.toResponse(it) }
+    @GetMapping
+    fun getAll() = service.getAll()
 
-    fun getById(id: Int): ReminderResponse? =
-        service.getById(id)?.let { ReminderMapper.toResponse(it) }
+    @GetMapping("/{id}")
+    fun getById(@PathVariable id: Int) = service.getById(id)?.let { ResponseEntity.ok(it) } ?: ResponseEntity.notFound().build()
 
-    fun getByUser(userId: String): List<ReminderResponse> =
-        service.getByUser(userId).map { ReminderMapper.toResponse(it) }
+    @PostMapping
+    fun create(@RequestBody reminder: Reminder) = ResponseEntity.ok(service.create(reminder))
 
-    fun getBySubject(subjectId: Int): List<ReminderResponse> =
-        service.getBySubject(subjectId).map { ReminderMapper.toResponse(it) }
+    @PutMapping("/{id}")
+    fun update(@PathVariable id: Int, @RequestBody reminder: Reminder) = service.update(id, reminder)?.let { ResponseEntity.ok(it) } ?: ResponseEntity.notFound().build()
 
-    fun create(request: ReminderRequest): ReminderResponse =
-        ReminderMapper.toResponse(service.create(ReminderMapper.toEntity(0, request)))
-
-    fun delete(id: Int) = service.delete(id)
-
-    fun update(id: Int, request: ReminderRequest): ReminderResponse = service.update(id, request.toReminder()).toResponse()
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable id: Int): ResponseEntity<Void> {
+        service.delete(id)
+        return ResponseEntity.noContent().build()
+    }
 }

@@ -1,21 +1,28 @@
 package com.myreminder.controllers
 
-import com.myreminder.mappers.UserMapper
-import com.myreminder.models.requests.UserRequest
-import com.myreminder.models.responses.UserResponse
+import com.myreminder.models.entities.User
 import com.myreminder.services.UserService
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
 
+@RestController
+@RequestMapping("/users")
 class UserController(private val service: UserService) {
-    fun getAll(): List<UserResponse> =
-        service.getAll().map { UserMapper.toResponse(it) }
+    @GetMapping
+    fun getAll() = service.getAll()
 
-    fun getById(uid: String): UserResponse? =
-        service.getById(uid)?.let { UserMapper.toResponse(it) }
+    @GetMapping("/{id}")
+    fun getById(@PathVariable id: String) = service.getById(id)?.let { ResponseEntity.ok(it) } ?: ResponseEntity.notFound().build()
 
-    fun create(request: UserRequest): UserResponse =
-        UserMapper.toResponse(service.create(UserMapper.toEntity(request)))
+    @PostMapping
+    fun create(@RequestBody user: User) = ResponseEntity.ok(service.create(user))
 
-    fun delete(uid: String) = service.delete(uid)
+    @PutMapping("/{id}")
+    fun update(@PathVariable id: String, @RequestBody user: User) = service.update(id, user)?.let { ResponseEntity.ok(it) } ?: ResponseEntity.notFound().build()
 
-    fun update(uid: String, request: UserRequest): UserResponse = service.update(uid, request.toUser()).toResponse()
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable id: String): ResponseEntity<Void> {
+        service.delete(id)
+        return ResponseEntity.noContent().build()
+    }
 }
