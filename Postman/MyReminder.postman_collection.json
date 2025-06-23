@@ -1,0 +1,234 @@
+{
+    "info": {
+        "_postman_id": "myreminder-collection-2024",
+        "name": "MyReminder",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Crear Usuario",
+            "request": {
+                "method": "POST",
+                "header": [{"key": "Content-Type", "value": "application/json"}],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"id\": \"u1\",\n  \"name\": \"Josue\",\n  \"email\": \"josue@email.com\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/users",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "users"]
+                }
+            }
+        },
+        {
+            "name": "Crear Materia",
+            "request": {
+                "method": "POST",
+                "header": [{"key": "Content-Type", "value": "application/json"}],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"id\": 1,\n  \"name\": \"Matemáticas\",\n  \"userId\": \"u1\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/subjects",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "subjects"]
+                }
+            }
+        },
+        {
+            "name": "Crear Recordatorio",
+            "request": {
+                "method": "POST",
+                "header": [{"key": "Content-Type", "value": "application/json"}],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"id\": 1,\n  \"userId\": \"u1\",\n  \"subjectId\": 1,\n  \"title\": \"Examen Final\",\n  \"description\": \"Estudiar para el examen final de matemáticas\",\n  \"date\": \"2024-06-25\",\n  \"time\": \"10:00\",\n  \"priority\": \"Alta\",\n  \"priorityColor\": \"Rojo\",\n  \"type\": \"Examen\",\n  \"status\": \"Pendiente\",\n  \"notificationId\": 100\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/reminders",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "reminders"]
+                }
+            }
+        },
+        {
+            "name": "Obtener todos los usuarios",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/users",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "users"]
+                }
+            }
+        },
+        {
+            "name": "Obtener usuario por ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/users/u1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "users", "u1"]
+                }
+            }
+        },
+        {
+            "name": "Actualizar usuario",
+            "request": {
+                "method": "PUT",
+                "header": [{"key": "Content-Type", "value": "application/json"}],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"id\": \"u1\",\n  \"name\": \"Josue Actualizado\",\n  \"email\": \"josue@email.com\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/users/u1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "users", "u1"]
+                }
+            }
+        },
+        {
+            "name": "Eliminar usuario",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/users/u1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "users", "u1"]
+                }
+            }
+        },
+        {
+            "name": "Obtener todas las materias",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/subjects",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "subjects"]
+                }
+            }
+        },
+        {
+            "name": "Obtener materia por ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/subjects/1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "subjects", "1"]
+                }
+            }
+        },
+        {
+            "name": "Actualizar materia",
+            "request": {
+                "method": "PUT",
+                "header": [{"key": "Content-Type", "value": "application/json"}],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"id\": 1,\n  \"name\": \"Matemáticas Avanzadas\",\n  \"userId\": \"u1\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/subjects/1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "subjects", "1"]
+                }
+            }
+        },
+        {
+            "name": "Eliminar materia",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/subjects/1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "subjects", "1"]
+                }
+            }
+        },
+        {
+            "name": "Obtener todos los recordatorios",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/reminders",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "reminders"]
+                }
+            }
+        },
+        {
+            "name": "Obtener recordatorio por ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/reminders/1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "reminders", "1"]
+                }
+            }
+        },
+        {
+            "name": "Actualizar recordatorio",
+            "request": {
+                "method": "PUT",
+                "header": [{"key": "Content-Type", "value": "application/json"}],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"id\": 1,\n  \"userId\": \"u1\",\n  \"subjectId\": 1,\n  \"title\": \"Examen Final Actualizado\",\n  \"description\": \"Estudiar más para el examen final\",\n  \"date\": \"2024-06-26\",\n  \"time\": \"12:00\",\n  \"priority\": \"Media\",\n  \"priorityColor\": \"Amarillo\",\n  \"type\": \"Examen\",\n  \"status\": \"Pendiente\",\n  \"notificationId\": 101\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/reminders/1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "reminders", "1"]
+                }
+            }
+        },
+        {
+            "name": "Eliminar recordatorio",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/api/myreminder/reminders/1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "myreminder", "reminders", "1"]
+                }
+            }
+        }
+    ]
+}
