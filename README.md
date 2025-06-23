@@ -59,7 +59,7 @@
 Clona este repositorio en tu máquina local con el siguiente comando:
 
 ```bash
-git clone https://github.com/josuetb/MyReminder.git
+git clone <TU_REPO_AQUI>
 ```
 
 Luego navega a la carpeta del proyecto:
@@ -101,6 +101,48 @@ Puedes ejecutar el proyecto de dos formas:
 1. Abre el proyecto en IntelliJ IDEA.
 2. Ve a la ruta `src/main/kotlin/com/myreminder/MyReminderApplication.kt`.
 3. Haz clic derecho sobre el archivo y selecciona **Run 'MyReminderApplicationKt'** o haz clic en el botón verde de "Run" que aparece al lado del nombre de la clase.
+
+---
+
+## Paso 4: Pruebas con Postman
+
+Puedes crear tus propias peticiones en Postman usando los endpoints de la tabla anterior. Aquí tienes ejemplos de cuerpos para las peticiones POST:
+
+### Crear usuario
+```json
+{
+  "id": "u1",
+  "name": "Josue",
+  "email": "josue@email.com"
+}
+```
+
+### Crear materia
+```json
+{
+  "id": 1,
+  "name": "Matemáticas",
+  "userId": "u1"
+}
+```
+
+### Crear recordatorio
+```json
+{
+  "id": 1,
+  "userId": "u1",
+  "subjectId": 1,
+  "title": "Examen Final",
+  "description": "Estudiar para el examen final de matemáticas",
+  "date": "2024-06-25",
+  "time": "10:00",
+  "priority": "Alta",
+  "priorityColor": "Rojo",
+  "type": "Examen",
+  "status": "Pendiente",
+  "notificationId": 100
+}
+```
 
 ---
 
