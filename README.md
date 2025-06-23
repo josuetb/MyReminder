@@ -104,48 +104,6 @@ Puedes ejecutar el proyecto de dos formas:
 
 ---
 
-## Paso 4: Pruebas con Postman
-
-Puedes crear tus propias peticiones en Postman usando los endpoints de la tabla anterior. Aquí tienes ejemplos de cuerpos para las peticiones POST:
-
-### Crear usuario
-```json
-{
-  "id": "u1",
-  "name": "Josue",
-  "email": "josue@email.com"
-}
-```
-
-### Crear materia
-```json
-{
-  "id": 1,
-  "name": "Matemáticas",
-  "userId": "u1"
-}
-```
-
-### Crear recordatorio
-```json
-{
-  "id": 1,
-  "userId": "u1",
-  "subjectId": 1,
-  "title": "Examen Final",
-  "description": "Estudiar para el examen final de matemáticas",
-  "date": "2024-06-25",
-  "time": "10:00",
-  "priority": "Alta",
-  "priorityColor": "Rojo",
-  "type": "Examen",
-  "status": "Pendiente",
-  "notificationId": 100
-}
-```
-
----
-
 ## Colección de Postman
 
 Dentro del proyecto se incluye el archivo `Postman/MyReminder.postman_collection.json`, el cual contiene las peticiones necesarias para probar los principales endpoints del sistema.
