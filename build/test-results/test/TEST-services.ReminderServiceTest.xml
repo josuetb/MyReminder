@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="services.ReminderServiceTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-06-23T19:55:51.915Z" hostname="LENOVO" time="3.977">
+<testsuite name="services.ReminderServiceTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-06-23T22:43:09.500Z" hostname="LENOVO" time="3.404">
   <properties/>
-  <testcase name="debe devolver null al actualizar si el recordatorio no existe()" classname="services.ReminderServiceTest" time="3.784"/>
-  <testcase name="debe obtener un recordatorio por ID si existe()" classname="services.ReminderServiceTest" time="0.012"/>
-  <testcase name="debe eliminar un recordatorio correctamente()" classname="services.ReminderServiceTest" time="0.022"/>
-  <testcase name="debe devolver null si no existe el recordatorio por ID()" classname="services.ReminderServiceTest" time="0.006"/>
-  <testcase name="debe obtener todos los recordatorios correctamente()" classname="services.ReminderServiceTest" time="0.035"/>
-  <testcase name="debe crear un recordatorio correctamente()" classname="services.ReminderServiceTest" time="0.099"/>
-  <testcase name="debe actualizar un recordatorio si existe()" classname="services.ReminderServiceTest" time="0.004"/>
+  <testcase name="debe devolver null al actualizar si el recordatorio no existe()" classname="services.ReminderServiceTest" time="3.251"/>
+  <testcase name="debe obtener un recordatorio por ID si existe()" classname="services.ReminderServiceTest" time="0.007"/>
+  <testcase name="debe eliminar un recordatorio correctamente()" classname="services.ReminderServiceTest" time="0.023"/>
+  <testcase name="debe devolver null si no existe el recordatorio por ID()" classname="services.ReminderServiceTest" time="0.004"/>
+  <testcase name="debe obtener todos los recordatorios correctamente()" classname="services.ReminderServiceTest" time="0.033"/>
+  <testcase name="debe crear un recordatorio correctamente()" classname="services.ReminderServiceTest" time="0.071"/>
+  <testcase name="debe actualizar un recordatorio si existe()" classname="services.ReminderServiceTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\josue\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.17.5\58f9507f5f28d1d3e7adfb4ec2fe37c29d332c9b\byte-buddy-agent-1.17.5.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning

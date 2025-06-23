@@ -1,0 +1,16 @@
+# Ignora carpetas y archivos generados automáticamente
+build/
+.gradle/
+.idea/
+out/
+*.iml
+
+# Ignora archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Ignora logs
+*.log
+
+# Ignora archivos de configuración de usuario
+*.swp 
