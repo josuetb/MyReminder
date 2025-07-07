@@ -59,7 +59,7 @@
 Clona este repositorio en tu máquina local con el siguiente comando:
 
 ```bash
-git clone <TU_REPO_AQUI>
+git clone https://github.com/josuetb/MyReminder.git
 ```
 
 Luego navega a la carpeta del proyecto:
